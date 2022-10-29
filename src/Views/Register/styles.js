@@ -26,6 +26,8 @@ export const styles = StyleSheet.create({
     width: 106,
     height: 105, 
     borderRadius: '50%',
+    borderWidth: 2,
+    borderColor: '#8EEDC7',
   },
   inputForm:{
     width: '80%',

@@ -1,16 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import React,{useState} from "react";
-import { Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// import Login from "./src/Views/Login/index";
-import Register from "./src/Views/Register/index";
+
 import {stylesGlobal} from './styleGlobal';
 
+
+import Login from "./src/Views/Login/index";
+import Register from "./src/Views/Register/index";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
- 
   return (
-    <View style={stylesGlobal.container}>
-      <Register/>
-    </View>
+
+    <NavigationContainer >
+      <Stack.Navigator >
+        <Stack.Screen
+         name="Login"
+         component={Login}
+         options={{title: 'Login'}}
+         />
+        <Stack.Screen
+         name="Cadastro"
+         component={Register}
+         options={{title: 'Cadastro'}}
+         />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

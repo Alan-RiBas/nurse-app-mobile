@@ -2,9 +2,16 @@
 import * as React from "react";
 import { Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
 
+import Register from "../Register/index";
+
+import { useNavigation } from "@react-navigation/native";
+
 import {styles} from './styles';
 
-export default function Login() {
+
+export default function Login({nav}) {
+
+  const navigation = useNavigation();
   
   return (
     <View style={styles.container}>
@@ -34,7 +41,8 @@ export default function Login() {
           <Text style={styles.singInBtn}>Entrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.registerArea}>
+        <TouchableOpacity style={styles.registerArea} onPress={() => navigation.navigate('Cadastro')
+        }>
           <Text style={styles.registerBtn}>Quero me Cadastrar</Text>
         </TouchableOpacity>
       </View>

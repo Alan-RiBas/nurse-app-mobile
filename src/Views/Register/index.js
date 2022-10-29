@@ -1,10 +1,11 @@
 import React from 'react';
 import { Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 
-
+import { useNavigation } from "@react-navigation/native";
 import { styles } from './styles'
 
-export default function Register (){
+export default function Register ({nav}){
+  const navigation = useNavigation();
 
   return(
     <View style={styles.container}>
@@ -45,7 +46,7 @@ export default function Register (){
       </View>
 
       <View style={styles.btnArea}>
-        <TouchableOpacity style={styles.btnBack}>
+        <TouchableOpacity style={styles.btnBack}  onPress={() => navigation.goBack()}>
           <Text style={styles.btnTxt}>Voltar</Text>
         </TouchableOpacity>
 
